@@ -1,0 +1,62 @@
+{
+	"info": {
+		"_postman_id": "4df3a1e3-2375-42c7-9a35-d70d5249bcef",
+		"name": "Proyecto4_Reporting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Resumen productos por Cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{banck_report}}/banck-report/product/summary/46440539/list",
+					"protocol": "http",
+					"host": [
+						"{{banck_report}}"
+					],
+					"path": [
+						"banck-report",
+						"product",
+						"summary",
+						"46440539",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movimientos Entre Fechas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dateI\":\"06-12-2021\",\r\n    \"dateF\":\"14-12-2021\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{banck_report}}/banck-report/product/movement/46440539/list",
+					"protocol": "http",
+					"host": [
+						"{{banck_report}}"
+					],
+					"path": [
+						"banck-report",
+						"product",
+						"movement",
+						"46440539",
+						"list"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

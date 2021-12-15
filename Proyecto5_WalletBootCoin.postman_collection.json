@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "a158d44a-c036-4796-b319-3b08647103ac",
+		"name": "Proyecto5_WalletBootCoin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Lista Wallets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{walletbootcoin}}/walletbootcoin",
+					"protocol": "http",
+					"host": [
+						"{{walletbootcoin}}"
+					],
+					"path": [
+						"walletbootcoin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar un Monedero BootCoin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"document\": \"46440530\",\r\n    \"documentType\": \"DNI\",\r\n    \"telephone\": \"940404462\",\r\n    \"mail\": \"jonavcar@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{walletbootcoin}}/walletbootcoin",
+					"protocol": "http",
+					"host": [
+						"{{walletbootcoin}}"
+					],
+					"path": [
+						"walletbootcoin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Publicar Copra de Boot Coint",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bankAccount\": \"0000-1234-0099-234\",\r\n    \"amount\": 250\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{walletbootcoin}}/walletbootcoin/buy",
+					"protocol": "http",
+					"host": [
+						"{{walletbootcoin}}"
+					],
+					"path": [
+						"walletbootcoin",
+						"buy"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

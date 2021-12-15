@@ -1,0 +1,268 @@
+{
+	"info": {
+		"_postman_id": "67f2e603-7422-4ed9-8672-9531a9b60ade",
+		"name": "Proyecto4_CreditMovement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Lista de Movimientos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{mov_credit}}/mov-credit",
+					"protocol": "http",
+					"host": [
+						"{{mov_credit}}"
+					],
+					"path": [
+						"mov-credit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Ultimo 10 movimientos de targetas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{mov_credit}}/mov-credit/card/last-10-movements",
+					"protocol": "http",
+					"host": [
+						"{{mov_credit}}"
+					],
+					"path": [
+						"mov-credit",
+						"card",
+						"last-10-movements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movimientos por producto entre fechas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dateI\":\"06-12-2021\",\r\n    \"dateF\":\"10-12-2021\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{mov_credit}}/mov-credit/product/movement/46440539/list",
+					"protocol": "http",
+					"host": [
+						"{{mov_credit}}"
+					],
+					"path": [
+						"mov-credit",
+						"product",
+						"movement",
+						"46440539",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un movimiento",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"movementType\": \"CARGO\",\r\n    \"modality\": \"TD\",\r\n    \"product\": \"TD-0004\",\r\n    \"productType\": \"TARGETA-DEBITO\",\r\n    \"concept\": \"PAGO-TARGETA\",\r\n    \"amount\": 400,\r\n    \"customer\": \"10101010\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{mov_credit}}/mov-credit",
+					"protocol": "http",
+					"host": [
+						"{{mov_credit}}"
+					],
+					"path": [
+						"mov-credit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pago con Targeta Debito",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customer\": \"46440539\",\r\n    \"product\": \"TD-000000001\",\r\n    \"thirdProduct\": \"TC-000000002\",\r\n    \"observation\": \"Pago de targeta de credito con targeta de debito\",\r\n    \"amount\": 160\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{mov_credit}}/mov-credit/debit-card/payment",
+					"protocol": "http",
+					"host": [
+						"{{mov_credit}}"
+					],
+					"path": [
+						"mov-credit",
+						"debit-card",
+						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar movimiento",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{mov_credit}}/mov-credit/34343434-756588",
+					"protocol": "http",
+					"host": [
+						"{{mov_credit}}"
+					],
+					"path": [
+						"mov-credit",
+						"34343434-756588"
+					]
+				},
+				"description": "Para eliminar una cuenta solo se debe poner el id de la cuenta en la ruta"
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar movimiento",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"movementType\": \"CARGO\",\r\n    \"concept\": \"PAGO-TARGETA\",\r\n    \"modality\": \"TD\",\r\n    \"product\": \"TD-00000004\",\r\n    \"productType\": \"TARGETA-DEBITO\",\r\n    \"customer\": \"46440539\",\r\n    \"observation\": \"Amortizacion de cuota\",\r\n    \"thirdClient\": null,\r\n    \"thirdProduct\": null,\r\n    \"amount\": 400.0,\r\n    \"date\": \"08-12-2021\",\r\n    \"hour\": \"09:15:44\",\r\n    \"state\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{mov_credit}}/mov-credit/325735623",
+					"protocol": "http",
+					"host": [
+						"{{mov_credit}}"
+					],
+					"path": [
+						"mov-credit",
+						"325735623"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movimientos x Cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{mov_credit}}/mov-credit/customer/46440539/list",
+					"protocol": "http",
+					"host": [
+						"{{mov_credit}}"
+					],
+					"path": [
+						"mov-credit",
+						"customer",
+						"46440539",
+						"list"
+					]
+				},
+				"description": "Lista todas las cuentas de un cliente determinado"
+			},
+			"response": []
+		},
+		{
+			"name": "List movimientos x Producto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{mov_credit}}/mov-credit/product/46440539/list",
+					"protocol": "http",
+					"host": [
+						"{{mov_credit}}"
+					],
+					"path": [
+						"mov-credit",
+						"product",
+						"46440539",
+						"list"
+					]
+				},
+				"description": "Lista todas las cuentas de un cliente determinado"
+			},
+			"response": []
+		},
+		{
+			"name": "List movimientos por cliente y cuenta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{mov_credit}}/mov-credit/customer-product/46440539/TD-000000001/list",
+					"protocol": "http",
+					"host": [
+						"{{mov_credit}}"
+					],
+					"path": [
+						"mov-credit",
+						"customer-product",
+						"46440539",
+						"TD-000000001",
+						"list"
+					]
+				},
+				"description": "Lista todas las cuentas de un cliente determinado"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Movimiento por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{mov_credit}}/mov-credit/362836617",
+					"protocol": "http",
+					"host": [
+						"{{mov_credit}}"
+					],
+					"path": [
+						"mov-credit",
+						"362836617"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

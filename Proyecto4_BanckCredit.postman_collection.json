@@ -1,0 +1,343 @@
+{
+	"info": {
+		"_postman_id": "85b41d4b-e244-47ea-8d0c-bbae0126f250",
+		"name": "Proyecto4_BanckCredit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Listar productos de credito",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{banck_credit}}/banck-credit",
+					"protocol": "http",
+					"host": [
+						"{{banck_credit}}"
+					],
+					"path": [
+						"banck-credit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resumen Creditos por Cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{banck_credit}}/banck-credit/summary/46440539/list",
+					"protocol": "http",
+					"host": [
+						"{{banck_credit}}"
+					],
+					"path": [
+						"banck-credit",
+						"summary",
+						"46440539",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lista de cronograma de pagos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/credit/schedule",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"credit",
+						"schedule"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear credito - Personal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productType\": \"CP\",\r\n    \"customer\": \"46440539\",\r\n    \"customerType\": \"CP\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{banck_credit}}/banck-credit",
+					"protocol": "http",
+					"host": [
+						"{{banck_credit}}"
+					],
+					"path": [
+						"banck-credit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Targeta de Credito",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productType\": \"TC\",\r\n    \"customer\": \"46440539\",\r\n    \"customerType\": \"CP\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{banck_credit}}/banck-credit",
+					"protocol": "http",
+					"host": [
+						"{{banck_credit}}"
+					],
+					"path": [
+						"banck-credit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Targeta de Debito",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productType\": \"TD\",\r\n    \"customer\": \"46440539\",\r\n    \"customerType\": \"CP\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{banck_credit}}/banck-credit",
+					"protocol": "http",
+					"host": [
+						"{{banck_credit}}"
+					],
+					"path": [
+						"banck-credit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cambio estado Cuota",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"PAGADO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{banck_credit}}/banck-credit/schedule/quota/CR-TC-46440539-919043",
+					"protocol": "http",
+					"host": [
+						"{{banck_credit}}"
+					],
+					"path": [
+						"banck-credit",
+						"schedule",
+						"quota",
+						"CR-TC-46440539-919043"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generar Cuotas de prestamo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product\": \"TC-46440539-69\",\r\n    \"expirationDate\": \"11-04-2021\",\r\n    \"amount\": 240\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{banck_credit}}/banck-credit/schedule",
+					"protocol": "http",
+					"host": [
+						"{{banck_credit}}"
+					],
+					"path": [
+						"banck-credit",
+						"schedule"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear credito - Empresa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productType\": \"CE\",\r\n    \"customer\": \"10464405394\",\r\n    \"customerType\": \"CE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{banck_credit}}/banck-credit",
+					"protocol": "http",
+					"host": [
+						"{{banck_credit}}"
+					],
+					"path": [
+						"banck-credit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar credito",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{banck_credit}}/banck-credit/10464405394-7796",
+					"protocol": "http",
+					"host": [
+						"{{banck_credit}}"
+					],
+					"path": [
+						"banck-credit",
+						"10464405394-7796"
+					]
+				},
+				"description": "Para eliminar una cuenta solo se debe poner el id de la cuenta en la ruta"
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar credito",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"creditType\": \"CT\",\r\n        \"customer\": \"10464405394\",\r\n        \"customerType\": \"PJ\",\r\n        \"dateCreated\": \"22-11-2021\",\r\n        \"limitAmount\": 60000,\r\n        \"active\": true\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{banck_credit}}/banck-credit/10464405394-8659",
+					"protocol": "http",
+					"host": [
+						"{{banck_credit}}"
+					],
+					"path": [
+						"banck-credit",
+						"10464405394-8659"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Creditos de un Cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{banck_credit}}/banck-credit/10464405394/list",
+					"protocol": "http",
+					"host": [
+						"{{banck_credit}}"
+					],
+					"path": [
+						"banck-credit",
+						"10464405394",
+						"list"
+					]
+				},
+				"description": "Lista todas las cuentas de un cliente determinado"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Credito por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{banck_credit}}/banck-credit/10464405394-8659",
+					"protocol": "http",
+					"host": [
+						"{{banck_credit}}"
+					],
+					"path": [
+						"banck-credit",
+						"10464405394-8659"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Count Cards By Customer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{banck_credit}}/banck-credit/card/46440539/count",
+					"protocol": "http",
+					"host": [
+						"{{banck_credit}}"
+					],
+					"path": [
+						"banck-credit",
+						"card",
+						"46440539",
+						"count"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

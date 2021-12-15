@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "0771fa31-2df4-4b5f-8fa0-7fad886c5afe",
+		"name": "Proyecto4_BanckAccount",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Listar cuentas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{banck_account}}/banck-account",
+					"protocol": "http",
+					"host": [
+						"{{banck_account}}"
+					],
+					"path": [
+						"banck-account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resumen cuentas por Cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{banck_account}}/banck-account/summary/46440539/list",
+					"protocol": "http",
+					"host": [
+						"{{banck_account}}"
+					],
+					"path": [
+						"banck-account",
+						"summary",
+						"46440539",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Cuenta Ahorros - Cliente Personal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customer\": \"46440539\",\r\n    \"customerType\": \"CP\",\r\n    \"accountType\": \"CA\",\r\n    \"topMMovem\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{banck_account}}/banck-account",
+					"protocol": "http",
+					"host": [
+						"{{banck_account}}"
+					],
+					"path": [
+						"banck-account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Cuenta Corriente - Cliente Personal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customer\": \"46440539\",\r\n    \"customerType\": \"CP\",\r\n    \"accountType\": \"CC\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{banck_account}}/banck-account",
+					"protocol": "http",
+					"host": [
+						"{{banck_account}}"
+					],
+					"path": [
+						"banck-account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Cuenta Plazo Fijo- Cliente Personal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customer\": \"46440533\",\r\n    \"customerType\": \"CP\",\r\n    \"accountType\": \"CPF\",\r\n    \"dayMovem\": 21\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{banck_account}}/banck-account",
+					"protocol": "http",
+					"host": [
+						"{{banck_account}}"
+					],
+					"path": [
+						"banck-account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Cuenta Ahorro - Cliente Personal VIP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customer\": \"46440539\",\r\n    \"customerType\": \"CPV\",\r\n    \"accountType\": \"CA\",\r\n    \"mmpdm\": 100.4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{banck_account}}/banck-account",
+					"protocol": "http",
+					"host": [
+						"{{banck_account}}"
+					],
+					"path": [
+						"banck-account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Cuenta Corriente - Cliente  Empresarial",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customer\": \"205193395\",\r\n    \"customerType\": \"CE\",\r\n    \"accountType\": \"CC\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{banck_account}}/banck-account",
+					"protocol": "http",
+					"host": [
+						"{{banck_account}}"
+					],
+					"path": [
+						"banck-account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Cuenta Corriente - Cliente  Empresarial PYME",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customer\": \"10464405394\",\r\n    \"customerType\": \"CEP\",\r\n    \"accountType\": \"CC\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{banck_account}}/banck-account",
+					"protocol": "http",
+					"host": [
+						"{{banck_account}}"
+					],
+					"path": [
+						"banck-account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar cuenta",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{banck_account}}/banck-account/77777777-8277",
+					"protocol": "http",
+					"host": [
+						"{{banck_account}}"
+					],
+					"path": [
+						"banck-account",
+						"77777777-8277"
+					]
+				},
+				"description": "Para eliminar una cuenta solo se debe poner el id de la cuenta en la ruta"
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar cuenta",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customer\": \"10464405394\",\r\n    \"customerType\": \"PJ\",\r\n    \"accountType\": \"CF\",\r\n    \"dateCreated\": \"21-11-2021\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{banck_account}}/banck-account/10464405394-1413",
+					"protocol": "http",
+					"host": [
+						"{{banck_account}}"
+					],
+					"path": [
+						"banck-account",
+						"10464405394-1413"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Cuentas de un Cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{banck_account}}/banck-account/46440539/list",
+					"protocol": "http",
+					"host": [
+						"{{banck_account}}"
+					],
+					"path": [
+						"banck-account",
+						"46440539",
+						"list"
+					]
+				},
+				"description": "Lista todas las cuentas de un cliente determinado"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Cuenta por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{banck_account}}/banck-account/46440539-5536",
+					"protocol": "http",
+					"host": [
+						"{{banck_account}}"
+					],
+					"path": [
+						"banck-account",
+						"46440539-5536"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

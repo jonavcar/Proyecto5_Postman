@@ -1,0 +1,453 @@
+{
+	"info": {
+		"_postman_id": "dddab7bd-2132-4110-b934-46d0fdeffe14",
+		"name": "Proyecto4_AccountMovement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Movimientos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{mov_account}}/mov-account",
+					"protocol": "http",
+					"host": [
+						"{{mov_account}}"
+					],
+					"path": [
+						"mov-account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movimientos por producto entre fechas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dateI\": \"07-12-2021\",\r\n    \"dateF\": \"07-12-2021\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{mov_account}}/mov-account/product/movement/46440539/list",
+					"protocol": "http",
+					"host": [
+						"{{mov_account}}"
+					],
+					"path": [
+						"mov-account",
+						"product",
+						"movement",
+						"46440539",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Cuentas asociadas a targetas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{mov_account}}/mov-account/debit-card",
+					"protocol": "http",
+					"host": [
+						"{{mov_account}}"
+					],
+					"path": [
+						"mov-account",
+						"debit-card"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Saldo Cuenta Principal de Targeta Debito",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{mov_account}}/mov-account/debit-card/TD-000000001/balance/main-account",
+					"protocol": "http",
+					"host": [
+						"{{mov_account}}"
+					],
+					"path": [
+						"mov-account",
+						"debit-card",
+						"TD-000000001",
+						"balance",
+						"main-account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transferencia Mis Cuentas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product\": \"CC-000000001\",\r\n    \"customer\": \"46440539\",\r\n    \"thirdProduct\": \"CC-000000002\",\r\n    \"amount\": 250\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{mov_account}}/mov-account/transfer/my-account",
+					"protocol": "http",
+					"host": [
+						"{{mov_account}}"
+					],
+					"path": [
+						"mov-account",
+						"transfer",
+						"my-account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagar con Targeta Debito",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"debitCard\": \"TD-000000001\",\r\n    \"amount\": 3000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{mov_account}}/mov-account/debit-card/payment",
+					"protocol": "http",
+					"host": [
+						"{{mov_account}}"
+					],
+					"path": [
+						"mov-account",
+						"debit-card",
+						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transferencia Terceros",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product\": \"CC-000000002\",\r\n    \"customer\": \"46440539\",\r\n    \"thirdProduct\": \"CC-000000003\",\r\n    \"thirdClient\": \"46440539\",\r\n    \"amount\": 200\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{mov_account}}/mov-account/transfer/other-account",
+					"protocol": "http",
+					"host": [
+						"{{mov_account}}"
+					],
+					"path": [
+						"mov-account",
+						"transfer",
+						"other-account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Asociar Cuentas a Targeta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"debitCard\": \"TD-000000001\",\r\n    \"account\": \"46440539-5335\",\r\n    \"order\": 1,\r\n    \"main\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{mov_account}}/mov-account/debit-card",
+					"protocol": "http",
+					"host": [
+						"{{mov_account}}"
+					],
+					"path": [
+						"mov-account",
+						"debit-card"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposito",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"concept\": \"DEPOSITO\",\r\n    \"product\": \"46440539-5335\",\r\n    \"customer\": \"46440539\",\r\n    \"amount\": 4100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{mov_account}}/mov-account",
+					"protocol": "http",
+					"host": [
+						"{{mov_account}}"
+					],
+					"path": [
+						"mov-account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retiro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"concept\": \"RETIRO\",\r\n    \"product\": \"46440539-5335\",\r\n    \"customer\": \"46440539\",\r\n    \"amount\": 1500\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{mov_account}}/mov-account",
+					"protocol": "http",
+					"host": [
+						"{{mov_account}}"
+					],
+					"path": [
+						"mov-account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar movimiento",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{mov_account}}/mov-account/46440539-793317",
+					"protocol": "http",
+					"host": [
+						"{{mov_account}}"
+					],
+					"path": [
+						"mov-account",
+						"46440539-793317"
+					]
+				},
+				"description": "Para eliminar una cuenta solo se debe poner el id de la cuenta en la ruta"
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar movimiento",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"movementType\": \"CARGO\",\r\n        \"concept\": \"RETIRO\",\r\n        \"modality\": \"VENTANILLA\",\r\n        \"product\": \"CC-000000001\",\r\n        \"productType\": null,\r\n        \"customer\": \"46440539\",\r\n        \"observation\": \"Retiro por la suma de -500.0\",\r\n        \"thirdClient\": \"\",\r\n        \"thirdProduct\": \"\",\r\n        \"amount\": -500.0,\r\n        \"date\": \"07-12-2021\",\r\n        \"hour\": \"18:52:32\",\r\n        \"state\": true\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{mov_account}}/mov-account/46440539-079705",
+					"protocol": "http",
+					"host": [
+						"{{mov_account}}"
+					],
+					"path": [
+						"mov-account",
+						"46440539-079705"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar Targeta debito cuenta",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"debitCard\": \"TD-000000001\",\r\n        \"account\": \"CC-000000002\",\r\n        \"date\": \"07-12-2021\",\r\n        \"main\": true,\r\n        \"order\": 1,\r\n        \"status\": \"1\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{mov_account}}/mov-account/debit-card/TDA-847672",
+					"protocol": "http",
+					"host": [
+						"{{mov_account}}"
+					],
+					"path": [
+						"mov-account",
+						"debit-card",
+						"TDA-847672"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movimientos x Cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{mov_account}}/mov-account/customer/46440539/list",
+					"protocol": "http",
+					"host": [
+						"{{mov_account}}"
+					],
+					"path": [
+						"mov-account",
+						"customer",
+						"46440539",
+						"list"
+					]
+				},
+				"description": "Lista todas las cuentas de un cliente determinado"
+			},
+			"response": []
+		},
+		{
+			"name": "List movimientos por cuenta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{mov_account}}/mov-account/account/46440539-5335/list",
+					"protocol": "http",
+					"host": [
+						"{{mov_account}}"
+					],
+					"path": [
+						"mov-account",
+						"account",
+						"46440539-5335",
+						"list"
+					]
+				},
+				"description": "Lista todas las cuentas de un cliente determinado"
+			},
+			"response": []
+		},
+		{
+			"name": "Lista Cuentas por Targeta Debito",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{mov_account}}/mov-account/debit-card/TD-000000001/list",
+					"protocol": "http",
+					"host": [
+						"{{mov_account}}"
+					],
+					"path": [
+						"mov-account",
+						"debit-card",
+						"TD-000000001",
+						"list"
+					]
+				},
+				"description": "Lista todas las cuentas de un cliente determinado"
+			},
+			"response": []
+		},
+		{
+			"name": "List movimientos por cliente y cuenta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{mov_account}}/mov-account/customer-account/46440539/CC-000000001/list",
+					"protocol": "http",
+					"host": [
+						"{{mov_account}}"
+					],
+					"path": [
+						"mov-account",
+						"customer-account",
+						"46440539",
+						"CC-000000001",
+						"list"
+					]
+				},
+				"description": "Lista todas las cuentas de un cliente determinado"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Movimiento por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{mov_account}}/mov-account/46440539-269723",
+					"protocol": "http",
+					"host": [
+						"{{mov_account}}"
+					],
+					"path": [
+						"mov-account",
+						"46440539-269723"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
